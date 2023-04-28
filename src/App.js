@@ -1,24 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-
+import EventCard from "./components/EventImage";
+import { Box } from "@mui/material";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{display: 'flex',justifyContent: 'center',paddingTop:4}}>
+    <EventCard message={"BUG : series assignment with a boolean indexer AND a series as a value would give incorrect results"}/>
+    </Box>
   );
 }
 
