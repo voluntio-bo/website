@@ -7,7 +7,7 @@ function MainWall(){
     ]
     return (
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-            <Box sx={{width:0.55}}>
+            <Box sx={{width:{sm:0.9,xs:0.9,md:0.55}}}>
                 <Wall events={events}/>
             </Box>
         </Box>
