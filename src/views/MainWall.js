@@ -6,8 +6,10 @@ function MainWall(){
         {"name":"Nombre 2","description":"Description"}
     ]
     return (
-        <Box sx={{display:'flex', alignItems:'center'}}>
-            <Wall events={events}/>
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <Box sx={{width:0.55}}>
+                <Wall events={events}/>
+            </Box>
         </Box>
     );
 }
