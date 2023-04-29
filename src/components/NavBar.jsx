@@ -11,7 +11,7 @@ import logoVoluntio from '../assets/logoVoluntio_small.png'
 function Navbar() {
     const theme = useTheme()
     return (
-        <AppBar sx={{ backgroundColor: '#FFFFFF',boxShadow: 'none',borderBottom: `1px solid lightgray` }}>
+        <AppBar sx={{ marginBottom: '60px', position: 'fixed', backgroundColor: '#FFFFFF',boxShadow: 'none',borderBottom: `1px solid lightgray` }}>
             <Toolbar>
                 <Typography marginTop= '8px'>
                     <img
