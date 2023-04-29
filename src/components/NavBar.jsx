@@ -8,7 +8,7 @@ import logoVoluntio from '../assets/logoVoluntio_small.png'
 
 function Navbar() {
     return (
-        <AppBar sx={{ marginBottom: '60px', position: 'fixed', backgroundColor: '#FFFFFF',boxShadow: 'none',borderBottom: `1px solid lightgray` }}>
+        <AppBar sx={{ marginBottom: '60px', position: 'fixed', backgroundColor: '#FFFFFF',boxShadow: 'none',border: `1px solid lightgray` }}>
             <Toolbar>
                 <Typography marginTop= '8px'>
                     <img
