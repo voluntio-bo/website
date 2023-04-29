@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import NoPage from './views/NoPage';
+import NavBar from './components/NavBar'
 
+import OrganizationView from './views/OrganizationView'
 
 import { createTheme, ThemeProvider, styled, responsiveFontSizes } from '@mui/material/styles'
 
@@ -54,7 +55,7 @@ export default function Routing() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/event" element={<EventCard />} />
+          <Route path="/organization" element={<OrganizationView />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
