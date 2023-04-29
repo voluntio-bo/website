@@ -1,17 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import './index.css';
 import App from './App';
-import NoPage from './views/NoPage';
-import NavBar from './components/NavBar'
-
-import OrganizationView from './views/OrganizationView'
-
+import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider, styled, responsiveFontSizes } from '@mui/material/styles'
-
-
   
 let theme = createTheme({
 typography: {
@@ -49,21 +41,10 @@ typography: {
     }
 },
 });
-
-export default function Routing() {
-  return (
-    <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/organization" element={<OrganizationView />} />
-          <Route path="*" element={<NoPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-  
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 theme = responsiveFontSizes(theme);
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<ThemeProvider theme={theme}><NavBar/> <div style={{ marginTop: '11vh' }}></div>
-  <Routing /></ThemeProvider>)
