@@ -18,6 +18,7 @@ import Reaction from './Reaction';
 import Avatar from './Avatar';
 
 export default function EventCard() {
+  let sx = {width:0.85, borderRadius:4, padding:1.5,borderColor:"#d0d7de", background:"#f5f6f8"}
   const [expanded, setExpanded] = React.useState(false);
   const [showMoreText, setShowMoreText] = React.useState("ver mas...");
 
@@ -32,7 +33,7 @@ export default function EventCard() {
 
   return (
     
-    <Card sx={{ maxWidth: 345 }}>
+    <Card variant='outlined' sx={sx}>
       <CardHeader
         avatar={
             <Avatar  size={50} ></Avatar>
