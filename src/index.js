@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import Reaction from './components/Reaction';
 import NavBar from './components/NavBar';
+import EventCard from './components/EventCard';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar />
+    <EventCard />
   </React.StrictMode>
 );
 
