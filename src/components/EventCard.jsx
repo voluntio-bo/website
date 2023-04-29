@@ -10,8 +10,9 @@ import Typography from '@mui/material/Typography';
 import defaultImage from '../assets/eventImage.PNG'
 import Reaction from './Reaction';
 import Avatar from './Avatar';
+import { Box } from '@mui/system';
 
-export default function EventCard() {
+export default function EventCard({eventName,eventDescription}) {
   let sx = {width:0.85, borderRadius:4, padding:1.5,borderColor:"#d0d7de", background:"#f5f6f8"}
   const [expanded, setExpanded] = React.useState(false);
   const [showMoreText, setShowMoreText] = React.useState("ver mas...");
@@ -19,9 +20,9 @@ export default function EventCard() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
     if(expanded){
-        setShowMoreText("ver mas...")
+        setShowMoreText(" ver mas...")
     }else{
-        setShowMoreText("ver menos...")
+        setShowMoreText(" ver menos...")
     }
   };
 
@@ -32,18 +33,22 @@ export default function EventCard() {
         avatar={
             <Avatar  size={50} ></Avatar>
         }
-        title="Shrimp and Chorizo Paella"
+        title="User Name"
         subheader="September 14, 2016"
       />
 
 
-    <CardContent style={{ display: 'flex'}} >
-        <Typography variant="body2" color="text.secondary" >
-            This impressive paella is a perfect party dish and a fun meal to cook
-            together with your guests. Add 1 cup of frozen peas along with the mussels,
-            if you like.
-            <Typography variant="body2" color="text.secondary" onClick={handleExpandClick}>{showMoreText}</Typography>
+    <CardContent sx={{ display: 'flex', flexDirection:'column'}}>
+        <Typography variant="h6" color="text.secondary" >
+            {eventName}
         </Typography>
+        <Box style={{ display: 'flex', flexDirection:'row'}}>
+            <Typography variant="body2" color="text.secondary" >
+                {eventDescription}
+            </Typography>
+            <Typography sx={{marginLeft:1}} variant="body2" color="text.secondary" onClick={handleExpandClick}>{showMoreText}</Typography>
+        </Box>
+
       </CardContent>
 
       <Collapse in={expanded} timeout="auto">
@@ -56,10 +61,6 @@ export default function EventCard() {
         </CardContent>
       </Collapse>
 
-
-
-    
-
       <CardMedia
         component="img"
         height="194"
@@ -67,9 +68,6 @@ export default function EventCard() {
         alt="Paella dish"
       />
 
-
-
-      
       <Reaction/>
 
 
