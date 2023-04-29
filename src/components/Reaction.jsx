@@ -11,6 +11,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 
 import SendIcon from '@mui/icons-material/Send';
+import { Box } from "@mui/system";
 
 
 export default function Reaction({children,sx={}}) {
@@ -29,7 +30,7 @@ export default function Reaction({children,sx={}}) {
     };
 
     return (
-        <div>
+        <Box sx={{px:1.5, py:0.85}}>
             <IconButton aria-label="Me gusta" onClick={handleClickFavorite}>
                 {isFavorite ? <FavoriteBorderIcon /> : <FavoriteIcon />}
             </IconButton>
@@ -42,6 +43,6 @@ export default function Reaction({children,sx={}}) {
             <IconButton aria-label="Enviar a" >
                 <SendIcon fontSize="small"/>
             </IconButton>
-        </div>
+        </Box>
     );
 }
