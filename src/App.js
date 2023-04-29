@@ -1,10 +1,10 @@
-import { Box } from "@mui/material";
-import EventCard from './components/EventCard';
+import MainWall from "./views/MainWall"
+
 function App() {
   return (
-    <Box sx={{display: 'flex',justifyContent: 'center',paddingTop:4}}>
-     <EventCard></EventCard>
-    </Box>
+    <>
+    <MainWall/>
+    </>
   );
 }
 
