@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider, styled, responsiveFontSizes } from '@mui/material/styles'
+import CreateEvent from './views/CreateEvent';
   
 let theme = createTheme({
 typography: {
@@ -44,7 +45,7 @@ typography: {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CreateEvent />
   </React.StrictMode>
 );
 theme = responsiveFontSizes(theme);
