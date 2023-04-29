@@ -10,8 +10,7 @@ import NavBar from './components/NavBar';
 import OrganizationView from './views/OrganizationView'
 
 import { createTheme, ThemeProvider, styled, responsiveFontSizes } from '@mui/material/styles'
-
-
+import CreateEvent from './views/CreateEvent';
   
 let theme = createTheme({
 typography: {

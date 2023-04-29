@@ -7,7 +7,7 @@ export default function BasicButtons({ color, onClick, text}) {
     <Stack spacing={2} direction="row">
       <Button
         variant="contained"
-        style={{ backgroundColor: color, borderRadius: 35, color: 'white' }}
+        style={{ backgroundColor:color, borderRadius: 35, color: 'white' }}
         onClick={onClick}
       >{text}
       </Button>
