@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import Typography from '@mui/material/Typography';
+import ProfileCard from "../components/ProfileCard";
 
 function OrganizationView() {
   return (
@@ -7,6 +8,7 @@ function OrganizationView() {
      <Typography variant="body2" color="text.secondary">
             Vista para organización
         </Typography>
+      <ProfileCard></ProfileCard>
     </Box>
   );
 }
