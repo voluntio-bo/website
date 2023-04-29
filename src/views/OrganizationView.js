@@ -1,12 +1,37 @@
+import axios from "axios";
+import React , { useState , useEffect} from 'react';
 import { Box } from "@mui/material";
 import Typography from '@mui/material/Typography';
 import ProfileCard from "../components/ProfileCard";
 import SocialMediaIcons from "../components/SocialMediaIcons";
+
+import { useParams } from 'react-router-dom'
+
+
 function OrganizationView({misionText,visionText}) {
+  const { organizationId } = useParams()
+  // const urlOrganization= 'url/'+ organizationId
+  const urlOrganization = "https://catfact.ninja/fact"
+  const [organizationData, setOrganizationData] = useState([])
+
   misionText = "Best Buddies International es una organización sin fines de lucro 501(c)(3) dedicada a establecer un movimiento mundial de voluntarios que crea oportunidades para amistades individuales, empleo integrado, desarrollo de liderazgo y una vida inclusiva para las personas con discapacidad intelectual y de desarrollo (DDI)."
   visionText = "Para poner a Best Buddies fuera del negocio. Best Buddies prevee un mundo donde las personas con DDI se integren con tanto éxito en las escuelas, lugares de trabajo y comunidades que sus esfuerzos y servicios actuales serán innecesarios. Hasta que esa visión se convierta en realidad, la organización continuará educando a estudiantes de secundaria, preparatoria y universidad, miembros de la comunidad, corporaciones y empleadores sobre las necesidades emocionales, funcionales y naturales y las habilidades de las personas con IDD."
   
+  const fetchOrganizationData = () => {
+    var responseOrganizationData = axios(urlOrganization);
+    axios.all([responseOrganizationData]).then(
+        axios.spread((...allData) => {
+            var dataBK = allData[0].data
+            setOrganizationData(dataBK)
+        })
+  )}
 
+  console.log("organizationData: ", organizationData )
+
+  useEffect(() => { 
+    fetchOrganizationData();
+  }, [])
+  
   const sxTypography = {
     borderRadius: '10px',
     border : '1px solid lightgray',
