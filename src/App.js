@@ -1,4 +1,4 @@
-import EventCard from "./components/EventImage";
+import EventCard from "./components/EventCard";
 import { Box } from "@mui/material";
 function App() {
   return (
