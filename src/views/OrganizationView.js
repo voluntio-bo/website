@@ -4,9 +4,9 @@ import { Box } from "@mui/material";
 import Typography from '@mui/material/Typography';
 import ProfileCard from "../components/ProfileCard";
 import SocialMediaIcons from "../components/SocialMediaIcons";
-
+import BasicButtons from '../components/Button';
 import { useParams } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 
 function OrganizationView() {
   const { organizationId } = useParams()
@@ -38,10 +38,16 @@ function OrganizationView() {
     width : '80%',
     p :"20px"
   };
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/crear-evento");
+  };
   
   return (
+    <>
     <Box sx={{display: 'flex',justifyContent: 'center',paddingTop:4}}>
-      <ProfileCard name={organizationData.name} username={organizationData.userName} description={organizationData.description} profileImage={organizationData.profileImagePath} coverImage={organizationData.coverImagePath}></ProfileCard>
+      <ProfileCard name={organizationData.name} username={organizationData.userName} description={organizationData.description} profileImage={organizationData.profileImagePath} coverImage={organizationData.coverImagePath} organizationName={organizationData.organizationName }></ProfileCard>
 
         <Box
           style={{
@@ -71,8 +77,9 @@ function OrganizationView() {
               </Typography>
               <SocialMediaIcons></SocialMediaIcons>
         </Box>
-
     </Box>
+    <BasicButtons text={"Crear Evento"} sx={ {marginLeft: "30px" }} onClick={handleClick}></BasicButtons>
+    </>
   );
 }
 
