@@ -26,6 +26,14 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
     month: 'long',
     year: 'numeric'
   });
+  let eventMedia = eventImageUrl ? (<CardMedia
+  component="img"
+  width={1}
+  margin={0}
+  height="400"
+  image={eventImageUrl}
+  alt="Paella dish"
+  />) : null;
   return (
     
     <Card variant='outlined' sx={sx}>
@@ -56,15 +64,8 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
             </Box>
         </CardContent>
       </Box>
-
-      <CardMedia
-        component="img"
-        width={1}
-        margin={0}
-        height="400"
-        image={eventImageUrl}
-        alt="Paella dish"
-      />
+      {eventMedia}
+      
       <CardActions sx={{display:'flex', flexDirection:'row', justifyContent: 'space-between' }}>
       <Reaction/>
       <BasicButtons text={"Inscribirme ahora"} ></BasicButtons>
