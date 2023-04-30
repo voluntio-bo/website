@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom'
 
 function OrganizationView({misionText,visionText}) {
   const { organizationId } = useParams()
+  console.log("organizationId", organizationId)
   // const urlOrganization= 'url/'+ organizationId
   const urlOrganization = "https://catfact.ninja/fact"
   const [organizationData, setOrganizationData] = useState([])

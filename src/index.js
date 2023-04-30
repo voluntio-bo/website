@@ -54,7 +54,7 @@ export default function Routing() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<App />} />
-          <Route path="/organization" element={<OrganizationView />} />
+          <Route path="/organization/:organizationId" element={<OrganizationView />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
