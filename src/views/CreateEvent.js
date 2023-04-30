@@ -1,7 +1,7 @@
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/material";
 import MyChip from ".././components/chip";
-import BasicTextFields from '../components/textField';
+import BasicTextFields, {DateText} from '../components/textField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -125,14 +125,7 @@ function CreateEvent() {
                     Nombre del Evento
                     <BasicTextFields name="name" value={formEvent.name} handleInputChange={handleInputChange}></BasicTextFields>
                     Fecha
-                    <br></br><input
-                        name="eventDate"
-                        type="date"
-                        value={formEvent.eventDate}
-                        onChange={handleInputChange}
-                        style={{ marginLeft: '10px', width: '20%', height: '60px' }}
-                    ></input> <br></br>
-
+                    <DateText name="eventDate" value={formEvent.eventDate} handleInputChange={handleInputChange} ></DateText>
                     Duración
                     <br></br><BasicTextFields name="endTime" value={formEvent.endTime} handleInputChange={handleInputChange} ></BasicTextFields>
                     <Box sx={{ display: 'flex', justifyContent: 'center', paddingTop: 4 }}>
