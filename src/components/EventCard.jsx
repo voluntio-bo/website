@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
-
+import VerifiedIcon from '@mui/icons-material/Verified';
 import defaultImage from '../assets/eventImage.PNG'
 import Reaction from './Reaction';
 import Avatar from './Avatar';
@@ -18,26 +18,37 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
   let sxPaddings = {px:1.5, py:0.5}
   let organizationView = "/organization/"
   const navigate = useNavigate();
-
+  let eventDateFormated = new Date(eventDateTime);
+  eventDateFormated = eventDateFormated.toLocaleDateString('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
   return (
     
     <Card variant='outlined' sx={sx}>
       <Box sx={sxPaddings}>
         <CardHeader
             avatar={
-                <Avatar  size={50} ></Avatar>
+              <Avatar  size={50}/>
             }
-            title="User Name"
-            subheader={eventDateTime}
+            title={
+              <Box sx={{display:'flex',alignItems:'center'}}>
+                {"User Name"}
+                <VerifiedIcon color='primary' fontSize='15' sx={{marginLeft:0.75}}></VerifiedIcon>
+              </Box>
+            }
+            subheader={eventDateFormated}
             sx={{ padding:1.5}}
             onClick={() => navigate(organizationView+organizationId)}
-        />
+        >
+        </CardHeader>
         <CardContent sx={{ display: 'flex', flexDirection:'column', padding:1.5}}>
-            <Typography variant="h6" color="text.secondary" >
+            <Typography variant="h6" color="text.primary" >
                 {eventName}
             </Typography>
             <Box style={{ display: 'flex', flexDirection:'row'}}>
-                <Typography variant="body2" color="text.secondary" >
+                <Typography variant="body1" color="text.secondary" >
                     {eventDescription}
                 </Typography>
             </Box>
