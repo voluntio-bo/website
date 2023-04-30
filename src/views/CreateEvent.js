@@ -68,7 +68,7 @@ function CreateEvent() {
         axios.post(url, data)
             .then(function (response) {
                 if (response.status == 201) {
-                    navigate("/organizacion");
+                    navigate("/");
                 }
             })
             .catch(function (error) {

@@ -15,7 +15,7 @@ import { Box, padding } from '@mui/system';
 import { CardActions } from '@mui/material';
 import BasicButtons from './Button';
 
-export default function EventCard({organizationId, eventName,eventDescription,eventImageUrl,eventDateTime}) {
+export default function EventCard({organizationId, eventName,eventDescription,eventImageUrl,eventDateTime,organizationName}) {
   let sx = {width:0.85, borderRadius:4, background:"#FFFFFF",marginBottom:3, borderColor:"#cfd9de"}
   let sxPaddings = {px:1.5, py:0.5}
   let organizationView = "/organization/"
@@ -44,7 +44,7 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
             }
             title={
               <Box sx={{display:'flex',alignItems:'center'}}>
-                {"User Name"}
+                {organizationName}
                 <VerifiedIcon color='primary' fontSize='15' sx={{marginLeft:0.75}}></VerifiedIcon>
               </Box>
             }
