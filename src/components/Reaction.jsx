@@ -32,13 +32,13 @@ export default function Reaction({children,sx={}}) {
     return (
         <Box sx={{px:1.5, py:0.85}}>
             <IconButton aria-label="Me gusta" onClick={handleClickFavorite}>
-                {isFavorite ? <FavoriteBorderIcon /> : <FavoriteIcon />}
+                {isFavorite ? <FavoriteBorderIcon /> : <FavoriteIcon color='primary' />}
             </IconButton>
             <IconButton aria-label="Guardar" onClick={handleClickBookmark}>
-                {isBookmark ? <BookmarkBorderIcon /> : <BookmarkIcon />}
+                {isBookmark ? <BookmarkBorderIcon /> : <BookmarkIcon color='primary' />}
             </IconButton>
             <IconButton aria-label="Comentar" onClick={handleClickComment}>
-                {isComment ? <ChatBubbleOutlineIcon fontSize="small" /> : <ChatBubbleIcon fontSize="small"/>}
+                {isComment ? <ChatBubbleOutlineIcon fontSize="small" /> : <ChatBubbleIcon fontSize="small" color='primary'/>}
             </IconButton>
             <IconButton aria-label="Enviar a" >
                 <SendIcon fontSize="small"/>

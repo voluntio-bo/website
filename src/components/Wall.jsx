@@ -7,7 +7,7 @@ export default function Wall({events}) {
     <List sx={{ width: '100%', bgcolor: 'background.paper', display:'flex', flexDirection:'column', alignItems:'center'}}>
       {events.map((n,i)=>{
         return (<>
-            <EventCard eventName={n.name} eventDescription={n.description} eventImageUrl={n.imagePath} eventDateTime={n.eventDate}></EventCard>
+            <EventCard organizationId={n.organizationId} eventName={n.name} eventDescription={n.description} eventImageUrl={n.imagePath} eventDateTime={n.eventDate}></EventCard>
         </>)})}
     </List>
   )};

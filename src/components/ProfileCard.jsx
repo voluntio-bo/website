@@ -5,14 +5,13 @@ import Typography from '@mui/material/Typography';
 
 import Avatar from './Avatar';
 
-import coverImage from '../assets/cover_bb.PNG'
-import profileImage from '../assets/logo_bb.png'
 
 
-export default function ProfileCard({ color, onClick, name,userName,description}) {
-  name = "Best Buddies Bolivia"
-  userName = "@BestBuddies"
-  description = "Best Buddies es un movimiento global de inclusión social para personas con discapacidad intelectual desde amistades uno a uno y ahora esta en Bolivia."
+export default function ProfileCard({ color, onClick, name,userName,description,profileImage,coverImage}) {
+  console.log("profile card",name,profileImage)
+  //name = "Best Buddies Bolivia"
+  //userName = "@BestBuddies"
+  //description = "Best Buddies es un movimiento global de inclusión social para personas con discapacidad intelectual desde amistades uno a uno y ahora esta en Bolivia."
   return (
     <Box
       sx={{
