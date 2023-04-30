@@ -13,7 +13,7 @@ import Reaction from './Reaction';
 import Avatar from './Avatar';
 import { Box, padding } from '@mui/system';
 
-export default function EventCard({eventId, eventName,eventDescription,eventImageUrl,eventDateTime}) {
+export default function EventCard({organizationId, eventName,eventDescription,eventImageUrl,eventDateTime}) {
   let sx = {width:0.85, borderRadius:4, background:"#FFFFFF",marginBottom:3, borderColor:"#B0AEB5"}
   let sxPaddings = {px:1.5, py:0.5}
   let organizationView = "/organization/"
@@ -30,7 +30,7 @@ export default function EventCard({eventId, eventName,eventDescription,eventImag
             title="User Name"
             subheader={eventDateTime}
             sx={{ padding:1.5}}
-            onClick={() => navigate(organizationView+eventId)}
+            onClick={() => navigate(organizationView+organizationId)}
         />
         <CardContent sx={{ display: 'flex', flexDirection:'column', padding:1.5}}>
             <Typography variant="h6" color="text.secondary" >
