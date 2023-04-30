@@ -6,15 +6,18 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
 
 import defaultImage from '../assets/eventImage.PNG'
 import Reaction from './Reaction';
 import Avatar from './Avatar';
 import { Box, padding } from '@mui/system';
 
-export default function EventCard({eventName,eventDescription,eventImageUrl,eventDateTime}) {
+export default function EventCard({eventId, eventName,eventDescription,eventImageUrl,eventDateTime}) {
   let sx = {width:0.85, borderRadius:4, background:"#FFFFFF",marginBottom:3, borderColor:"#B0AEB5"}
   let sxPaddings = {px:1.5, py:0.5}
+  let organizationView = "/organization/"
+  const navigate = useNavigate();
 
   return (
     
@@ -27,6 +30,7 @@ export default function EventCard({eventName,eventDescription,eventImageUrl,even
             title="User Name"
             subheader={eventDateTime}
             sx={{ padding:1.5}}
+            onClick={() => navigate(organizationView+eventId)}
         />
         <CardContent sx={{ display: 'flex', flexDirection:'column', padding:1.5}}>
             <Typography variant="h6" color="text.secondary" >
