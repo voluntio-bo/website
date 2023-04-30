@@ -18,6 +18,7 @@ export default function ProfileCard({ color, onClick, name,userName,description,
         border: `1px solid lightgray`,
         borderRadius: '15px',
         marginLeft: '50px',
+        width: '50%'
       }}
       >
           <CardMedia
