@@ -97,6 +97,7 @@ export default function Routing() {
     <BrowserRouter>
       <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/crear-evento" element={<CreateEvent />} />
           <Route path="/organization/:organizationId" element={<OrganizationView />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
