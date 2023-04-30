@@ -14,6 +14,8 @@ import Avatar from './Avatar';
 import { Box, padding } from '@mui/system';
 import { CardActions } from '@mui/material';
 import BasicButtons from './Button';
+import axios from "axios";
+import { useState , useEffect} from 'react';
 
 export default function EventCard({organizationId, eventName,eventDescription,eventImageUrl,eventDateTime,organizationName}) {
   let sx = {width:0.85, borderRadius:4, background:"#FFFFFF",marginBottom:3, borderColor:"#cfd9de"}
@@ -26,6 +28,20 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
     month: 'long',
     year: 'numeric'
   });
+  const urlOrganization = "https://voluntio-api.azurewebsites.net/api/organizations/"+organizationId
+  const [organization, setOrganization] = useState([])
+  
+  const fetchOrganizationData = () => {
+      var responseOrganizationData = axios(urlOrganization);
+      axios.all([responseOrganizationData]).then(
+          axios.spread((...allData) => {
+              var dataBK = allData[0].data
+              setOrganization(dataBK)
+          })
+  )}
+  useEffect(() => { 
+    fetchOrganizationData();
+  }, []);
   let eventMedia = eventImageUrl ? (<CardMedia
   component="img"
   width={1}
@@ -40,7 +56,7 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
       <Box sx={sxPaddings}>
         <CardHeader
             avatar={
-              <Avatar  size={50}/>
+              <Avatar  size={50} src={organization.profileImagePath}/>
             }
             title={
               <Box sx={{display:'flex',alignItems:'center'}}>
