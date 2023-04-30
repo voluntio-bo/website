@@ -18,7 +18,12 @@ export default function EventCard({eventId, eventName,eventDescription,eventImag
   let sxPaddings = {px:1.5, py:0.5}
   let organizationView = "/organization/"
   const navigate = useNavigate();
-
+  let eventDateFormated = new Date(eventDateTime);
+  eventDateFormated = eventDateFormated.toLocaleDateString('es-ES', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
   return (
     
     <Card variant='outlined' sx={sx}>
@@ -28,7 +33,7 @@ export default function EventCard({eventId, eventName,eventDescription,eventImag
                 <Avatar  size={50} ></Avatar>
             }
             title="User Name"
-            subheader={eventDateTime}
+            subheader={eventDateFormated}
             sx={{ padding:1.5}}
             onClick={() => navigate(organizationView+eventId)}
         />
