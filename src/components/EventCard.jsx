@@ -12,9 +12,11 @@ import defaultImage from '../assets/eventImage.PNG'
 import Reaction from './Reaction';
 import Avatar from './Avatar';
 import { Box, padding } from '@mui/system';
+import { CardActions } from '@mui/material';
+import BasicButtons from './Button';
 
 export default function EventCard({organizationId, eventName,eventDescription,eventImageUrl,eventDateTime}) {
-  let sx = {width:0.85, borderRadius:4, background:"#FFFFFF",marginBottom:3, borderColor:"#B0AEB5"}
+  let sx = {width:0.85, borderRadius:4, background:"#FFFFFF",marginBottom:3, borderColor:"#cfd9de"}
   let sxPaddings = {px:1.5, py:0.5}
   let organizationView = "/organization/"
   const navigate = useNavigate();
@@ -63,7 +65,10 @@ export default function EventCard({organizationId, eventName,eventDescription,ev
         image={eventImageUrl}
         alt="Paella dish"
       />
+      <CardActions sx={{display:'flex', flexDirection:'row', justifyContent: 'space-between' }}>
       <Reaction/>
+      <BasicButtons text={"Inscribirme ahora"} ></BasicButtons>
+      </CardActions>
 
 
     </Card>
